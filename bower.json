@@ -1,0 +1,22 @@
+{
+  "name": "chrome-timetracker",
+  "version": "0.0.1",
+  "homepage": "https://github.com/mattlo/chrome-timetracker",
+  "authors": [
+    "Matt Lo <mattlo.developer@gmail.com>"
+  ],
+  "description": "Timetracker app build as a Chrome App",
+  "main": "app.html",
+  "keywords": [
+    "time"
+  ],
+  "license": "Apache",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
