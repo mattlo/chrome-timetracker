@@ -1,11 +1,27 @@
 <!doctype html>
-<html ng-csp>
+<html ng-csp ng-app="chromeTimetracker">
 	<head>
+		<meta charset="utf-8" />
 		<link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" />
 		<link rel="stylesheet" href="../css/main.css" />
 	</head>
 	<body>
+		<header ng-controller="Header" class="global-header">
+			<nav class="pull-right">
+				<a class="os-trigger"><i class="fa fa-minus"></i></a>
+				<a class="os-trigger"><i class="fa fa-times"></i></a>
+			</nav>
+		</header>
+		
+		<h1>Test</h1>
+		<p>
+			test
+		</p>
+		
 		<script src="../bower_components/jquery/dist/jquery.js"></script>
 		<script src="../bower_components/angular/angular.js"></script>
+		<script src="../js/bootstrap.js"></script>
+		<script src="../js/main/controllers/Header.js"></script>
+		<script src="../js/config.js"></script>
 	</body>
 </html>
