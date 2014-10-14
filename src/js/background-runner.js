@@ -1,5 +1,5 @@
 chrome.app.runtime.onLaunched.addListener(function () {
-	chrome.app.window.create('app.html', {
+	chrome.app.window.create('src/views/app.html', {
 		id: "chromeTimetracker",
 		innerBounds: {
 			width: 244,
