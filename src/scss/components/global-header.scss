@@ -1,5 +1,38 @@
 .global-header {
 	border-bottom: solid 4px $brand-primary;
 	background: $dark-color;
-	height: 50px;
+	height: 54px;
+	padding: 0 10px;
+	-webkit-app-region: drag;
+	opacity: 0.5;
+	transition: opacity ease-in-out 0.3s;
+	
+	&.focus-active {
+		opacity: 1;
+	}
+}
+
+.os-trigger {
+	$size: 30px;
+
+	float: left;
+	font-size: 18px;
+	height: $size;
+	width: $size;
+	line-height: $size;
+	color: $gray-dark;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	margin-top: 10px;
+	margin-left: 5px;
+
+	&:hover {
+		background-color: $body-bg;
+		color: $dark-color;
+		
+		&.os-trigger-close {
+			background-color: $brand-danger;
+		}
+	}
 }

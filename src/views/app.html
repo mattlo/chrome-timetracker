@@ -6,21 +6,23 @@
 		<link rel="stylesheet" href="../css/main.css" />
 	</head>
 	<body>
-		<header ng-controller="Header" class="global-header">
+		<header ng-controller="Header" class="global-header" can-focus="window">
 			<nav class="pull-right">
-				<a class="os-trigger"><i class="fa fa-minus"></i></a>
-				<a class="os-trigger"><i class="fa fa-times"></i></a>
+				<a ng-click="$emit('os.minimize')" class="os-trigger">
+					<i class="fa fa-minus"></i>
+				</a>
+				
+				<a ng-click="$emit('os.close')" class="os-trigger os-trigger-close">
+					<i class="fa fa-times"></i>
+				</a>
 			</nav>
 		</header>
-		
-		<h1>Test</h1>
-		<p>
-			test
-		</p>
 		
 		<script src="../bower_components/jquery/dist/jquery.js"></script>
 		<script src="../bower_components/angular/angular.js"></script>
 		<script src="../js/bootstrap.js"></script>
+		<script src="../js/main/directives/canFocus.js"></script>
+		<script src="../js/main/factories/NativeEvents.js"></script>
 		<script src="../js/main/controllers/Header.js"></script>
 		<script src="../js/config.js"></script>
 	</body>
