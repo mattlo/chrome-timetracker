@@ -227,9 +227,9 @@ $dropdown-bg:                    $dark-color !default;
 //** Dropdown menu `border-color`.
 $dropdown-border:                rgba(0,0,0,.15) !default;
 //** Dropdown menu `border-color` **for IE8**.
-$dropdown-fallback-border:       $gray-darker !default;
+$dropdown-fallback-border:       $gray-dark !default;
 //** Divider color for between dropdown items.
-$dropdown-divider-bg:            $gray-darker !default;
+$dropdown-divider-bg:            $gray-dark !default;
 
 //** Dropdown link text color.
 $dropdown-link-color:            $link-color !default;

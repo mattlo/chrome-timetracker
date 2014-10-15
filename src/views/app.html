@@ -6,22 +6,49 @@
 		<link rel="stylesheet" href="../css/main.css" />
 	</head>
 	<body>
-		<header ng-controller="Header" class="global-header" can-focus="window">
+		<header ng-controller="Header" class="global-header focus-active" can-focus="window">
+			<nav class="pull-left primary-nav">
+				<div class="btn-group" data-dropdown data-is-open="status.isopen">
+					<button type="button" class="btn btn-primary dropdown-toggle" ng-disabled="disabled">
+						<i class="fa fa-bars"></i>
+					</button>
+					<ul class="dropdown-menu">
+						<li>
+							<a>New Time Entry</a>
+						</li>
+						<li class="divider"></li>
+						<li>
+							<a>View Last 7 Days</a>
+						</li>
+						<li>
+							<a>View Last Month</a>
+						</li>
+						<li>
+							<a>View Current Month</a>
+						</li>
+						<li class="divider"></li>
+						<li>
+							<a ng-click="$emit('os.close')">Close</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
 			<nav class="pull-right">
 				<a ng-click="$emit('os.minimize')" class="os-trigger">
 					<i class="fa fa-minus"></i>
 				</a>
-				
+
 				<a ng-click="$emit('os.close')" class="os-trigger os-trigger-close">
 					<i class="fa fa-times"></i>
 				</a>
 			</nav>
 		</header>
-		
+
 		<div class="container">
-			
+
 		</div>
-		
+
 		<script src="../bower_components/jquery/dist/jquery.js"></script>
 		<script src="../bower_components/angular/angular.js"></script>
 		<script src="../bower_components/angular-bootstrap/ui-bootstrap.js"></script>

@@ -1,14 +1,33 @@
 .global-header {
 	border-bottom: solid 4px $brand-primary;
-	background: $dark-color;
+	background: $gray-darker;
 	height: 54px;
-	padding: 0 10px;
+	padding: 0 10px 0 5px;
 	-webkit-app-region: drag;
 	opacity: 0.5;
-	transition: opacity ease-in-out 0.3s;
+	box-shadow: 0 0 5px #000;
+	
+	> * {
+		-webkit-app-region: no-drag;
+	}
 	
 	&.focus-active {
 		opacity: 1;
+	}
+	
+	.primary-nav {
+		.btn-primary.dropdown-toggle {
+			$size: 40px;
+			
+			height: $size;
+			width: $size;
+			text-align: center;
+			margin-top: 5px;
+		}
+		
+		a {
+			cursor: pointer;
+		}
 	}
 }
 
@@ -20,7 +39,7 @@
 	height: $size;
 	width: $size;
 	line-height: $size;
-	color: $gray-dark;
+	color: $gray;
 	text-align: center;
 	vertical-align: middle;
 	cursor: pointer;
