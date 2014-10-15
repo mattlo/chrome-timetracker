@@ -24,6 +24,7 @@
     "bootstrap-sass-official": "~3.2",
     "jquery": "2",
     "font-awesome": "~4",
-    "namespace-simple": "~1.0.0"
+    "namespace-simple": "~1.0.0",
+    "angular-bootstrap": "~0.11.2"
   }
 }
