@@ -3,3 +3,13 @@ body {
 	height: 100%;
 	background: $body-bg;
 }
+
+input,
+textarea {
+	outline: none;
+}
+
+.container-fluid {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}

@@ -57,8 +57,53 @@
 			</div>
 		</header>
 
-		<div class="container">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12">
+					
+					<div class="week-display">
+						<div ng-repeat="item in [1,2,3,4]" class="week-row week-row-header clearfix">
 
+							<div class="hours-bucket-label">
+								<input type="text" value="Some Label" />
+							</div>
+							
+							<div class="days">
+
+								<div class="day">
+									<input type="number" value="1" />
+								</div>
+
+								<div class="day">
+									<input type="number" value="1" />
+								</div>
+								
+								<div class="day">
+									<input type="number" value="1" />
+								</div>
+
+								<div class="day">
+									<input type="number" value="1" />
+								</div>
+								
+								<div class="day">
+									<input type="number" value="1" />
+								</div>
+
+								<div class="day">
+									<input type="number" value="1" />
+								</div>
+								
+								<div class="day">
+									<input type="number" value="1" />
+								</div>
+							</div>
+
+						</div>
+					</div>
+					
+				</div>
+			</div>
 		</div>
 
 		<script src="../bower_components/jquery/dist/jquery.js"></script>

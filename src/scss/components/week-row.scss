@@ -1,0 +1,63 @@
+.week-row {
+	$label-width: 300px;
+
+	position: relative;
+	background: $gray-dark;
+	
+	+ .week-row {
+		margin-top: 1px;
+	}
+
+	.hours-bucket-label {
+		float: left;
+		width: $label-width;
+		padding: 10px 20px;
+	}
+	
+	.hours-bucket-label,
+	.day {
+		position: relative;
+		
+		&:hover {
+			input[type="text"],
+			input[type="number"] {
+				color: #fff;
+			}
+		}
+	}
+
+	input[type="text"],
+	input[type="number"],
+	textarea {
+		width: 100%;
+		background: none;
+		border: none;
+		padding: 10px 0;
+		color: $gray-light;
+
+		&:focus {
+			color: $brand-primary !important; // overrides hover
+			font-weight: 700;
+		}
+	}
+	
+	.hours-bucket-label,
+	.day {
+		
+	}
+	
+	input[type="number"] {
+		text-align: right;
+	}
+
+	.day {
+		width: 1/7 * 100%;
+		float: left;
+		padding: 10px 5px;
+		border-left: solid 1px $body-bg;
+	}
+
+	.days {
+		margin-left: $label-width;
+	}
+}
