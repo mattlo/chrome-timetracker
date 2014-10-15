@@ -1,13 +1,14 @@
 .global-header {
-	border-bottom: solid 4px $brand-primary;
+	border-bottom: solid 2px $brand-primary;
 	background: $gray-darker;
-	height: 54px;
+	height: 52px;
 	padding: 0 10px 0 5px;
 	-webkit-app-region: drag;
 	opacity: 0.5;
 	box-shadow: 0 0 5px #000;
+	text-align: center;
 	
-	> * {
+	> nav {
 		-webkit-app-region: no-drag;
 	}
 	
@@ -50,6 +51,22 @@
 	.dropdown-menu {
 		padding-top: 10px;
 		padding-bottom: 10px;
+	}
+	
+	.logo {
+		line-height: 50px;
+		color: $brand-primary;
+		font-family: $headings-font-family;
+		font-size: 20px;
+		
+		i {
+			color: $brand-primary;
+			font-size: 30px;
+			vertical-align: middle;
+			position: relative;
+			top: -1px;
+			margin-right: 10px;
+		}
 	}
 }
 
