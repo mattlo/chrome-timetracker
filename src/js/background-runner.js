@@ -3,10 +3,10 @@ chrome.app.runtime.onLaunched.addListener(function () {
 		id: "chromeTimetracker",
 		frame: 'none',
 		innerBounds: {
-			width: 244,
-			height: 380,
-			minWidth: 244,
-			minHeight: 380
+			width: 1000,
+			height: 600,
+			minWidth: 800,
+			minHeight: 400
 		}
 	});
 });
