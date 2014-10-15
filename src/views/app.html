@@ -14,11 +14,14 @@
 					</button>
 					<ul class="dropdown-menu">
 						<li>
-							<a>New Time Entry</a>
+							<a><i class="fa fa-th"></i> Overview</a>
 						</li>
 						<li class="divider"></li>
 						<li>
-							<a>View Last 7 Days</a>
+							<a>This Week</a>
+						</li>
+						<li>
+							<a>Last Week</a>
 						</li>
 						<li>
 							<a>View Last Month</a>
@@ -28,7 +31,11 @@
 						</li>
 						<li class="divider"></li>
 						<li>
-							<a ng-click="$emit('os.close')">Close</a>
+							<a>About</a>
+						</li>
+						<li class="divider"></li>
+						<li>
+							<a ng-click="$emit('os.close')"><i class="fa fa-times"></i> Close</a>
 						</li>
 					</ul>
 				</div>

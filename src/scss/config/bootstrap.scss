@@ -232,9 +232,9 @@ $dropdown-fallback-border:       $gray-dark !default;
 $dropdown-divider-bg:            $gray-dark !default;
 
 //** Dropdown link text color.
-$dropdown-link-color:            $link-color !default;
+$dropdown-link-color:            darken($link-color, 40%) !default;
 //** Hover color for dropdown links.
-$dropdown-link-hover-color:      darken($link-color, 5%) !default;
+$dropdown-link-hover-color:      $link-color !default;
 //** Hover background for dropdown links.
 $dropdown-link-hover-bg:         $gray-darker !default;
 
@@ -244,7 +244,7 @@ $dropdown-link-active-color:     $component-active-color !default;
 $dropdown-link-active-bg:        $component-active-bg !default;
 
 //** Disabled dropdown menu item background color.
-$dropdown-link-disabled-color:   $gray-light !default;
+$dropdown-link-disabled-color:   lighten($link-color, 10%) !default;
 
 //** Text color for headers within dropdown menus.
 $dropdown-header-color:          $gray-light !default;

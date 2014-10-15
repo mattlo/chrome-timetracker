@@ -27,7 +27,29 @@
 		
 		a {
 			cursor: pointer;
+			padding-left: 40px;
+			position: relative;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			
+			i {
+				position: absolute;
+				left: 12px;
+				top: 9px;
+				color: darken($link-color, 40%);
+			}
+			
+			&:hover {
+				i {
+					color: $link-color;
+				}
+			}
 		}
+	}
+	
+	.dropdown-menu {
+		padding-top: 10px;
+		padding-bottom: 10px;
 	}
 }
 
