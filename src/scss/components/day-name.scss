@@ -1,0 +1,73 @@
+.day-monday {
+	&:before {
+		content: 'Monday';
+	}
+}
+.day-tuesday {
+	&:before {
+		content: 'Tuesday';
+	}
+}
+.day-wednesday {
+	&:before {
+		content: 'Wednesday';
+	}
+}
+.day-thursday {
+	&:before {
+		content: 'Thursday';
+	}
+}
+.day-friday {
+	&:before {
+		content: 'Friday';
+	}
+}
+.day-saturday {
+	&:before {
+		content: 'Saturday';
+	}
+}
+.day-sunday {
+	&:before {
+		content: 'Sunday';
+	}
+}
+
+@media (max-width: 1220px) {
+	.day-monday {
+		&:before {
+			content: 'Mon';
+		}
+	}
+	.day-tuesday {
+		&:before {
+			content: 'Tue';
+		}
+	}
+	.day-wednesday {
+		&:before {
+			content: 'Wed';
+		}
+	}
+	.day-thursday {
+		&:before {
+			content: 'Thu';
+		}
+	}
+	.day-friday {
+		&:before {
+			content: 'Fri';
+		}
+	}
+	.day-saturday {
+		&:before {
+			content: 'Sat';
+		}
+	}
+	.day-sunday {
+		&:before {
+			content: 'Sun';
+		}
+	}
+}

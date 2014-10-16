@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<header ng-controller="Header" class="global-header focus-active" can-focus="window">
-			
+
 			<nav class="pull-left primary-nav">
 				<div class="btn-group" data-dropdown data-is-open="status.isopen">
 					<button type="button" class="btn btn-primary dropdown-toggle" ng-disabled="disabled">
@@ -51,7 +51,7 @@
 					<i class="fa fa-times"></i>
 				</a>
 			</nav>
-			
+
 			<div class="logo">
 				<i class="fa fa-clock-o"></i> Chrome Timetracker
 			</div>
@@ -60,14 +60,37 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-xs-12">
-					
+
 					<div class="week-display">
-						<div ng-repeat="item in [1,2,3,4]" class="week-row week-row-header clearfix">
+						<header>
+							<h2>October 13-19</h2>
+						</header>
+
+						<div class="week-row week-row-header clearfix">
+
+							<div class="hours-bucket-label">
+
+							</div>
+
+							<div class="days">
+
+								<div class="day day-monday"></div>
+								<div class="day day-tuesday"></div>
+								<div class="day day-wednesday"></div>
+								<div class="day day-thursday"></div>
+								<div class="day day-friday"></div>
+								<div class="day day-saturday"></div>
+								<div class="day day-sunday"></div>
+							</div>
+
+						</div>
+
+						<div ng-repeat="item in [1, 2, 3, 4]" class="week-row clearfix week-row-input">
 
 							<div class="hours-bucket-label">
 								<input type="text" value="Some Label" />
 							</div>
-							
+
 							<div class="days">
 
 								<div class="day">
@@ -77,7 +100,7 @@
 								<div class="day">
 									<input type="number" value="1" />
 								</div>
-								
+
 								<div class="day">
 									<input type="number" value="1" />
 								</div>
@@ -85,7 +108,7 @@
 								<div class="day">
 									<input type="number" value="1" />
 								</div>
-								
+
 								<div class="day">
 									<input type="number" value="1" />
 								</div>
@@ -93,15 +116,24 @@
 								<div class="day">
 									<input type="number" value="1" />
 								</div>
-								
+
 								<div class="day">
 									<input type="number" value="1" />
 								</div>
 							</div>
 
 						</div>
+
+						<div  class="week-row week-row-footer clearfix">
+
+							<div class="hours-bucket-label"></div>
+
+							<div class="total days">
+								<span class="total-label">October 13 - 19</span> <strong>123 hours</strong>
+							</div>
+						</div>
 					</div>
-					
+
 				</div>
 			</div>
 		</div>
@@ -109,6 +141,7 @@
 		<script src="../bower_components/jquery/dist/jquery.js"></script>
 		<script src="../bower_components/angular/angular.js"></script>
 		<script src="../bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+		<script src="../bower_components/angular-chrome-storage/angular-chrome-storage.js"></script>
 		<script src="../js/bootstrap.js"></script>
 		<script src="../js/main/directives/canFocus.js"></script>
 		<script src="../js/main/factories/NativeEvents.js"></script>

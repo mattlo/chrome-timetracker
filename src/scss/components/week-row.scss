@@ -61,3 +61,44 @@
 		margin-left: $label-width;
 	}
 }
+
+.week-row-input {
+	.day {
+		&:hover {
+			background: $gray-darker;
+		}
+	}
+}
+
+.week-row-header {
+	.hours-bucket-label,
+	.day {
+		padding: 5px 20px;
+	}
+	
+	.day {
+		color: $gray;
+		text-align: right;
+	}
+}
+
+.week-row-footer {
+	.hours-bucket-label,
+	.total {
+		padding: 20px;
+	}
+	
+	.total {
+		border-left: solid 1px $body-bg;
+		text-align: right;
+	}
+	
+	.total-label {
+		color: $gray-light;
+		margin-right: 5px;
+		
+		&:after {
+			content: ':';
+		}
+	}
+}
