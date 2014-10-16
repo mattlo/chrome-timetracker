@@ -10,6 +10,9 @@
 			"scripts": ["src/js/background-runner.js"]
 		}
 	},
+	"permissions": [
+		"storage"
+	],
 	"icons": {
 		"16": "src/assets/images/icon-128.png",
 		"128": "src/assets/images/icon-256.png",
