@@ -19,11 +19,15 @@
 						</li>
 						<li class="divider"></li>
 						<li>
-							<a>This Week</a>
+							<a ng-click="$emit('setCurrentWeek')">This Week</a>
 						</li>
 						<li>
-							<a>Last Week</a>
+							<a ng-click="$emit('setLastWeek')">Last Week</a>
 						</li>
+						<li>
+							<a ng-click="$emit('setNextWeek')">Next Week</a>
+						</li>
+						<li class="divider"></li>
 						<li>
 							<a>View Last Month</a>
 						</li>
