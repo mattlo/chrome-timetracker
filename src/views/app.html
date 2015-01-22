@@ -85,10 +85,10 @@
 
 							</div>
 
-							<div ng-repeat="tasks in week.tasks" class="week-row clearfix week-row-input">
+							<div ng-repeat="task in week.tasks" class="week-row clearfix week-row-input">
 
 								<div class="hours-bucket-label">
-									<input type="text" value="Some Label" />
+									<input type="text" ng-model="task.label" />
 								</div>
 
 								<div class="days">
@@ -96,7 +96,7 @@
 									<div class="day" ng-repeat="day in week.days">
 										<input type="number" 
 											min="0"
-											ng-model="hoursData[day.format(DATA_KEY)][tasks.id]" />
+											ng-model="hoursData[day.format(DATA_KEY)][task.id]" />
 									</div>
 								</div>
 
