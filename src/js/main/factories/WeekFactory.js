@@ -1,4 +1,4 @@
-app.factory('WeekFactory', function ($rootScope, $log) {
+app.factory('WeekFactory', function ($rootScope, $log, Util) {
 	return {
 		/**
 		 * Generates a list of Moment days
@@ -6,11 +6,6 @@ app.factory('WeekFactory', function ($rootScope, $log) {
 		 * @return {Array}     
 		 */
 		getWeekFromDay: function (date) {
-			// create N array
-			function range(length) {
-				return Array(7).join(0).split(0);
-			}
-
 			// return day given index
 			function addDays(v, index) {
 				// lets create a day, starting with a monday, relative to the date provided
@@ -18,7 +13,7 @@ app.factory('WeekFactory', function ($rootScope, $log) {
 			}
 
 			// add days to 7 length list (a week)
-			return range().map(addDays);
+			return Util.range(7).map(addDays);
 		}
 	};
 });
