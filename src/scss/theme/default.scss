@@ -4,6 +4,10 @@ body {
 	background: $body-bg;
 }
 
+body {
+	overflow-y: auto;
+}
+
 input,
 textarea {
 	outline: none;
