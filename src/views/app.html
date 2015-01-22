@@ -94,18 +94,20 @@
 								<div class="days">
 
 									<div class="day" ng-repeat="day in week.days">
-										<input type="number" min="0" max="24" ng-model="hoursData[day.format(DATA_KEY)][tasks.id]" />
+										<input type="number" 
+											min="0"
+											ng-model="hoursData[day.format(DATA_KEY)][tasks.id]" />
 									</div>
 								</div>
 
 							</div>
 
-							<div  class="week-row week-row-footer clearfix">
+							<div class="week-row week-row-footer clearfix">
 
 								<div class="hours-bucket-label"></div>
 
 								<div class="total days">
-									<span class="total-label">{{ week.label }}</span> <strong>123 hours</strong>
+									<span class="total-label">{{ week.label }}</span> <strong>{{ calculate(week.days[START_DAY], week.days[END_DAY]) }} hours</strong>
 								</div>
 							</div>
 						</div>
@@ -124,6 +126,7 @@
 		<script src="../js/main/directives/canFocus.js"></script>
 		<script src="../js/main/factories/NativeEvents.js"></script>
 		<script src="../js/main/factories/WeekFactory.js"></script>
+		<script src="../js/main/factories/Util.js"></script>
 		<script src="../js/main/controllers/Header.js"></script>
 		<script src="../js/main/controllers/DateDelegator.js"></script>
 		<script src="../js/config.js"></script>

@@ -1,4 +1,5 @@
-app.controller('DateDelegator', function ($scope, WeekFactory) {
+// @TODO current digest cycle is running 3 times, and it has nothing to do with any of the impl
+app.controller('DateDelegator', function ($scope, WeekFactory, Util) {
 
 	// constants
 	// @TODO should we use angular constants?
@@ -53,8 +54,6 @@ app.controller('DateDelegator', function ($scope, WeekFactory) {
 		days.forEach(function (day) {
 			$scope.loadData(day, tasks);
 		});
-
-		console.log($scope.hoursData);
 	};
 
 	/**
@@ -109,10 +108,48 @@ app.controller('DateDelegator', function ($scope, WeekFactory) {
 		// resolve tasks
 		tasks.forEach(function (task) {
 			if (typeof data[task.id] === 'undefined') {
-				data[task.id] = 0;
+				data[task.id] = null;
 			}
 		});
 
 		// @TODO add localStorage loader
+	};
+
+	/**
+	 * Calculates range of date hours
+	 * @param  {Moment} startDay 
+	 * @param  {Moment} endDay   
+	 * @return {Number}          
+	 */
+	$scope.calculate = function (startDay, endDay) {
+		// using this to manipulate so we don't create N of new objects to throw away
+		var base = moment(startDay);
+
+		// create day keys from day range
+		function getDayKeys(v, index) {
+			return base.add(index === 0 ? 0 : 1, 'days').format($scope.DATA_KEY);
+		}
+
+		function getHoursByDay(key) {
+			var data = $scope.hoursData[key];
+
+			function getTaskHours(key) {
+				return data[key];
+			}
+
+			if (typeof data !== 'undefined') {
+				return Object.keys(data)
+					.map(getTaskHours)
+					.reduce(Util.add);
+			} else {
+				return 0;
+			}
+		}
+
+		// get totla hours
+		return Util.range(endDay.diff(startDay, 'days'))
+			.map(getDayKeys)
+			.map(getHoursByDay)
+			.reduce(Util.add);
 	};
 });
