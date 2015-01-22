@@ -188,7 +188,7 @@ app.controller('DateDelegator', function ($rootScope, $scope, $log, WeekFactory,
 			}
 		}
 
-		// get totla hours
+		// get total hours
 		return Util.range(endDay.diff(startDay, 'days'))
 			.map(getDayKeys)
 			.map(getHoursByDay)
