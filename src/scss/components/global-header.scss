@@ -52,6 +52,13 @@
 		padding-top: 10px;
 		padding-bottom: 10px;
 		background: rgba(#000, 0.9);
+		display: none;
+	}
+
+	// only open dropdown menu when in focus
+	// GPU bug with overlay dropdown on UI
+	&.focus-active .open > .dropdown-menu {
+		display: block;
 	}
 	
 	.logo {
