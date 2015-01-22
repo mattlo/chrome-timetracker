@@ -172,6 +172,7 @@ app.controller('DateDelegator', function ($rootScope, $scope, $log, WeekFactory,
 			return base.add(index === 0 ? 0 : 1, 'days').format($scope.DATA_KEY);
 		}
 
+		// calculate hours of all tasks for the day
 		function getHoursByDay(key) {
 			var data = $scope.hoursData[key];
 
