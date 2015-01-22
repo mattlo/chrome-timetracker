@@ -4,11 +4,24 @@ app.controller('DateDelegator', function ($scope, WeekFactory) {
 	// @TODO should we use angular constants?
 	$scope.START_DAY = 0;
 	$scope.END_DAY = 6;
+	$scope.DATA_KEY = 'YYYY-MM-DD';
 
 	/**
 	 * @type {Array}
 	 */
 	$scope.weeks = [];
+
+	/**
+	 * Hours object
+	 * @type {Object}
+	 */
+	$scope.hoursData = {};
+
+	/**
+	 * Tasks object
+	 * @type {Object}
+	 */
+	$scope.tasks = {};
 
 	/**
 	 * Initializer
@@ -24,13 +37,24 @@ app.controller('DateDelegator', function ($scope, WeekFactory) {
 	 * @return {undefined}
 	 */
 	$scope.setWeek = function (date) {
-		var days = $scope.createWeek(date);
+		var days = $scope.createWeek(date),
+			start = days[$scope.START_DAY],
+			end = days[$scope.END_DAY],
+			tasks = $scope.getTasks(start, end);
 
 		// push out week info
 		$scope.weeks.push({
 			days: days,
-			label: $scope.getRangeLabel(days[$scope.START_DAY], days[$scope.END_DAY])
+			label: $scope.getRangeLabel(start, end),
+			tasks: tasks
 		});
+
+		// prepare data
+		days.forEach(function (day) {
+			$scope.loadData(day, tasks);
+		});
+
+		console.log($scope.hoursData);
 	};
 
 	/**
@@ -60,5 +84,35 @@ app.controller('DateDelegator', function ($scope, WeekFactory) {
 
 		// return full string
 		return [startDate.format(fullFormat),getEndLabel()].join(' - ');
+	};
+
+	/**
+	 * Get tasks (stub)
+	 * @param  {Moment} start 
+	 * @param  {Moment} end   
+	 * @return {Array}       
+	 */
+	$scope.getTasks = function (start, end) {
+		return [
+			{
+				id: 1,
+				label: 'Front-end Development'
+			}
+		];
 	}
+
+	$scope.loadData = function (day, tasks) {
+		// resolve namespace
+		var formattedDay = day.format($scope.DATA_KEY),
+			data = $scope.hoursData[formattedDay] = $scope.hoursData[formattedDay] || {};
+
+		// resolve tasks
+		tasks.forEach(function (task) {
+			if (typeof data[task.id] === 'undefined') {
+				data[task.id] = 0;
+			}
+		});
+
+		// @TODO add localStorage loader
+	};
 });

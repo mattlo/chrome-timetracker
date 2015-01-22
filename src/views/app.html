@@ -61,91 +61,71 @@
 			<div class="row">
 				<div class="col-xs-12">
 
-					<div class="week-display">
-						<header>
-							<h2>October 13-19</h2>
-						</header>
+					<div ng-controller="DateDelegator" ng-init="init()">
+						<div class="week-display" ng-repeat="week in weeks">
+							<header>
+								<h2>{{ week.label }}</h2>
+							</header>
 
-						<div class="week-row week-row-header clearfix">
+							<div class="week-row week-row-header clearfix">
 
-							<div class="hours-bucket-label">
+								<div class="hours-bucket-label">
+									
+								</div>
+
+								<div class="days">
+									<div class="day day-monday"></div>
+									<div class="day day-tuesday"></div>
+									<div class="day day-wednesday"></div>
+									<div class="day day-thursday"></div>
+									<div class="day day-friday"></div>
+									<div class="day day-saturday"></div>
+									<div class="day day-sunday"></div>
+								</div>
 
 							</div>
 
-							<div class="days">
+							<div ng-repeat="tasks in week.tasks" class="week-row clearfix week-row-input">
 
-								<div class="day day-monday"></div>
-								<div class="day day-tuesday"></div>
-								<div class="day day-wednesday"></div>
-								<div class="day day-thursday"></div>
-								<div class="day day-friday"></div>
-								<div class="day day-saturday"></div>
-								<div class="day day-sunday"></div>
+								<div class="hours-bucket-label">
+									<input type="text" value="Some Label" />
+								</div>
+
+								<div class="days">
+
+									<div class="day" ng-repeat="day in week.days">
+										<input type="number" min="0" max="24" ng-model="hoursData[day.format(DATA_KEY)][tasks.id]" />
+									</div>
+								</div>
+
 							</div>
 
-						</div>
+							<div  class="week-row week-row-footer clearfix">
 
-						<div ng-repeat="item in [1, 2, 3, 4]" class="week-row clearfix week-row-input">
+								<div class="hours-bucket-label"></div>
 
-							<div class="hours-bucket-label">
-								<input type="text" value="Some Label" />
-							</div>
-
-							<div class="days">
-
-								<div class="day">
-									<input type="number" min="0" max="24" value="1" />
+								<div class="total days">
+									<span class="total-label">{{ week.label }}</span> <strong>123 hours</strong>
 								</div>
-
-								<div class="day">
-									<input type="number" min="0" max="24" value="1" />
-								</div>
-
-								<div class="day">
-									<input type="number" min="0" max="24" value="1" />
-								</div>
-
-								<div class="day">
-									<input type="number" min="0" max="24" value="1" />
-								</div>
-
-								<div class="day">
-									<input type="number" min="0" max="24" value="1" />
-								</div>
-
-								<div class="day">
-									<input type="number" min="0" max="24" value="1" />
-								</div>
-
-								<div class="day">
-									<input type="number" min="0" max="24" value="1" />
-								</div>
-							</div>
-
-						</div>
-
-						<div  class="week-row week-row-footer clearfix">
-
-							<div class="hours-bucket-label"></div>
-
-							<div class="total days">
-								<span class="total-label">October 13 - 19</span> <strong>123 hours</strong>
 							</div>
 						</div>
+
 					</div>
-
 				</div>
 			</div>
 		</div>
 
 		<script src="../bower_components/jquery/dist/jquery.js"></script>
 		<script src="../bower_components/angular/angular.js"></script>
+		<script src="../bower_components/moment/moment.js"></script>
 		<script src="../bower_components/angular-bootstrap/ui-bootstrap.js"></script>
 		<script src="../bower_components/angular-chrome-storage/angular-chrome-storage.js"></script>
 		<script src="../js/bootstrap.js"></script>
 		<script src="../js/main/directives/canFocus.js"></script>
 		<script src="../js/main/factories/NativeEvents.js"></script>
+		<script src="../js/main/factories/WeekFactory.js"></script>
 		<script src="../js/main/controllers/Header.js"></script>
+		<script src="../js/main/controllers/DateDelegator.js"></script>
 		<script src="../js/config.js"></script>
 	</body>
 </html>
